@@ -12,7 +12,8 @@ add_library(tet STATIC tetgen.cxx predicates.cxx)
 #We use this here to set -DTETLIBRARY for when compiling the
 #library
 set_target_properties(tet PROPERTIES "COMPILE_DEFINITIONS" TETLIBRARY)
-
+SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -fPIC")
+SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -fPIC")
 # Installation
 install(TARGETS tetgen DESTINATION bin)
 install(TARGETS tet DESTINATION lib)
